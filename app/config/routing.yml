@@ -1,0 +1,12 @@
+gdelre_schema:
+    resource: "@GdelreSchemaBundle/Controller/"
+    type:     annotation
+    prefix:   /gdelre_schema
+
+api:
+    resource: '.'
+    type:     'api_platform'
+
+app:
+    resource: '@AppBundle/Action/'
+    type:     'annotation'

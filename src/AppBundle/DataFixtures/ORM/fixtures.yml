@@ -1,0 +1,21 @@
+AppBundle\Entity\Article:
+    article_{1..45}:
+        articleBody: "<p><paragraphs(30, true)></p>"
+        headline: <sentence()>
+        published: true
+        images: ["@image_<current()>"]
+        tags: ["@tag_<current()>"]
+
+AppBundle\Entity\ImageObject:
+    image_{1..90}:
+        headline: <sentence(2)>
+        caption: <sentence(2)>
+        contentUrl: <imageUrl(1280, 720, 'fashion' )>
+        width: 1280
+        height: 720
+        published: true
+
+AppBundle\Entity\Tag:
+    tag_{1..45}:
+        headline: <sentence(2)>
+        published: true

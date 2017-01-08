@@ -1,0 +1,35 @@
+services:
+    gdelre_schema.metadata_factory.serializer:
+        class: 'Gdelre\SchemaBundle\Service\MetadataFactory\SerializerClassMetadataFactory'
+        public: false
+
+    gdelre_schema.extractor.doctrine:
+        class: 'Gdelre\SchemaBundle\Service\Extractor\DoctrineExtractor'
+        arguments:
+          - '@api_platform.doctrine.metadata_factory'
+        tags:
+          - { name: 'extractor', 'type': 'doctrine' }
+        public: false
+
+#    gdelre_schema.extractor.php_doc:
+#        class: 'Gdelre\SchemaBundle\Service\Extractor\PhpDocExtractor'
+#        tags:
+#          - { name: 'extractor', 'type': 'php_doc' }
+#        public: false
+#
+#    gdelre_schema.extractor.reflection:
+#        class: 'Gdelre\SchemaBundle\Service\Extractor\ReflectionExtractor'
+#        tags:
+#          - { name: 'extractor', 'type': 'reflection' }
+#        public: false
+#
+#    gdelre_schema.extractor.api_resource:
+#        class: 'Gdelre\SchemaBundle\Service\Extractor\ApiResourceExtractor'
+#        arguments:
+#          - '@gdelre_schema.metadata_factory.serializer'
+#        tags:
+#          - { name: 'extractor', 'type': 'api_resource' }
+#        public: false
+
+    gdelre_schema.schema.extractor:
+        class: 'Gdelre\SchemaBundle\Service\SchemaExtractor'
